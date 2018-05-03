@@ -12,7 +12,7 @@ Depends:
 Imports:
     shiny,
     colourpicker,
-    shiny.semantic
+    shinydashboard
 VignetteBuilder: knitr    
 Date: 2018-05-03
 License: GPL-2
