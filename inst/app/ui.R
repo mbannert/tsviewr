@@ -14,17 +14,19 @@ dashboardPage(header =
                 fluidRow(
                   box(title = "Graph",
                       width = 10, solidHeader = T,
-                      status = "primary"),
+                      status = "primary",
+                      plotOutput("tsPlot")),
                   box(title = "info",
                       width = 2, solidHeader = T,
-                      status = "primary")
+                      status = "primary",
+                      textOutput("hint"))
                 ),
                 fluidRow(
                   tabBox(
                     # The id lets us use input$tabset1 on the server to find the current tab
                     id = "tabset1", height = "250px",
-                    tabPanel("Data", "reading data"),
-                    tabPanel("Select", "Select time series"),
+                    tabInputSeries,
+                    tabSelectSeries,
                     tabPanel("Plot properties", "all the switches and buttons of tsplot"),
                     tabPanel("Export image", "png, pdf and so on"),
                     tabPanel("Export data", "long format wide format and so on"),
